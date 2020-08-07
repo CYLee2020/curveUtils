@@ -44,7 +44,9 @@ getSubpathsAtLength(pathArr: number[], ratio: number):
 ### `bezierCurve`:get the curve path of a given bezierCurve path at the given range[0,1];
 
 ```typescript
-bezierCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, x4: number, y4: number, t?: number): [x1:number,y1:number,c1x:number,c1y:number,c2x:number,c2y:number,x2:number,y2:number];
+bezierCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, x4: number, y4: number, t?: number):
+
+[x1:number,y1:number,c1x:number,c1y:number,c2x:number,c2y:number,x2:number,y2:number];
 ```
 
 ### `quadraticCurve`:get the curve path of a given quadraticCurve path at the given range[0,1];
