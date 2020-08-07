@@ -251,6 +251,7 @@ function getTotalLength(pathArr) {
 exports.getTotalLength = getTotalLength;
 ;
 function getSubpathsAtLength(pathArr, ratio) {
+    if (ratio === void 0) { ratio = 1; }
     var path = forMathPathArgs(pathArr);
     var length = getTotalLength(pathArr) * ratio;
     var x = 0, y = 0, p = [], l = 0, sp = [], point, len = 0;
@@ -283,16 +284,17 @@ function getSubpathsAtLength(pathArr, ratio) {
     return sp;
 }
 exports.getSubpathsAtLength = getSubpathsAtLength;
-function bezierCurve(x1, y1, x2, y2, x3, y3, x4, y4, t) {
-    if (t === void 0) { t = 1; }
+function bezierCurve(x1, y1, x2, y2, x3, y3, x4, y4, ratio) {
+    if (ratio === void 0) { ratio = 1; }
     var c = [x1, y1, x2, y2, x3, y3, x4, y4];
-    var curvePoints = getSubpathsAtLength(c, t);
+    var curvePoints = getSubpathsAtLength(c, ratio);
     return curvePoints.reduce(function (a, b) { return a.concat(b); });
 }
 exports.bezierCurve = bezierCurve;
-function quadraticCurve(x1, y1, x2, y2, x3, y3, t) {
+function quadraticCurve(x1, y1, x2, y2, x3, y3, ratio) {
+    if (ratio === void 0) { ratio = 1; }
     var _a = q2c(x1, y1, x2, y2, x3, y3), c1x = _a[0], c1y = _a[1], c2x = _a[2], c2y = _a[3], x4 = _a[4], y4 = _a[5];
-    return bezierCurve(x1, y1, c1x, c1y, c2x, c2y, x4, y4, t);
+    return bezierCurve(x1, y1, c1x, c1y, c2x, c2y, x4, y4, ratio);
 }
 exports.quadraticCurve = quadraticCurve;
 

@@ -24,6 +24,6 @@ export interface CurvePoint {
     };
     alpha: number;
 }
-export declare function getSubpathsAtLength(pathArr: number[], ratio: number): number[][];
-export declare function bezierCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, x4: number, y4: number, t?: number): number[];
-export declare function quadraticCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, t: number): number[];
+export declare function getSubpathsAtLength(pathArr: number[], ratio?: number): number[][];
+export declare function bezierCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, x4: number, y4: number, ratio?: number): number[];
+export declare function quadraticCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, ratio?: number): number[];

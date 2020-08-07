@@ -12,8 +12,8 @@ npm install curve-utils --save
 
 ## Features
 
-functions about curve.
-贝塞尔曲线函数
+curve functions.you can get the little step of the given path,so you can draw the animated curve.
+贝塞尔曲线函数,画贝塞尔曲线动画
 
 ## Methonds
 

@@ -237,13 +237,13 @@ export function getSubpathsAtLength(pathArr: number[], ratio: number = 1): numbe
     return sp;
 
 }
-export function bezierCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, x4: number, y4: number, t: number = 1) {
+export function bezierCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, x4: number, y4: number, ratio: number = 1) {
     let c = [x1, y1, x2, y2, x3, y3, x4, y4];
-    let curvePoints = getSubpathsAtLength(c, t);
+    let curvePoints = getSubpathsAtLength(c, ratio);
     return curvePoints.reduce(function (a, b) { return a.concat(b) })
 }
 
-export function quadraticCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, t: number = 1) {
+export function quadraticCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, ratio: number = 1) {
     let [c1x, c1y, c2x, c2y, x4, y4] = q2c(x1, y1, x2, y2, x3, y3);
-    return bezierCurve(x1, y1, c1x, c1y, c2x, c2y, x4, y4, t);
+    return bezierCurve(x1, y1, c1x, c1y, c2x, c2y, x4, y4, ratio);
 }
