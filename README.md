@@ -17,13 +17,13 @@ functions about curve.
 
 ## Methonds
 
-### pathArr like [mx,my,c1,c2,c3,c4,c5,c6,c1,c2,c3,c3,c4,c5,c6],The first two value is the start points,You can enter multiple curve path later.
-
 ### `getTotalLength`: get total length of the curve
 
 ```typescript
 getTotalLength(pathArr: number[]): number;
 ```
+
+pathArr like [mx,my,c1,c2,c3,c4,c5,c6,c1,c2,c3,c3,c4,c5,c6],The first two value is the start points,You can enter multiple curve path later.
 
 ### `getPointAtLength`: get point at the given length along the given path
 
