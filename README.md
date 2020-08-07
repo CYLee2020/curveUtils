@@ -17,13 +17,7 @@ functions about curve.
 
 ## Methonds
 
-```typescript
-type pathArr=[
-  [Mx:number,My:number],
-  [C1:number,C2:number,C3:number,C4:number,C5:number,C6:number],
-  [C1:number,C2:number,C3:number,C4:number,C5:number,C6:number]
-]
-```
+### pathArr like [mx,my,c1,c2,c3,c4,c5,c6,c1,c2,c3,c3,c4,c5,c6],The first two value is the start points,You can enter multiple curve path later.
 
 ### `getTotalLength`: get total length of the curve
 
