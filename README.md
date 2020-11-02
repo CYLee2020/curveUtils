@@ -15,20 +15,32 @@ npm install curve-utils --save
 curve functions.you can get the little step of the given path,so you can draw the animated curve.
 贝塞尔曲线函数,画贝塞尔曲线动画
 
+### inputContent like inputString:"M0 0L100 0" or inputArray:[["M",0,0],["L",100,0]]
+
+```typescript
+getTotalLength(path: inputContent): number;
+```
+
+# Curve
+
 ## Methonds
+
+### `path2Curve`: format the path to curve.
+
+```typescript
+path2Curve(path: inputContent): inputArray;
+```
 
 ### `getTotalLength`: get total length of the curve
 
 ```typescript
-getTotalLength(pathArr: number[]): number;
+getTotalLength(path: inputContent): number;
 ```
-
-pathArr like [mx,my,c1,c2,c3,c4,c5,c6,c1,c2,c3,c3,c4,c5,c6],The first two value is the start points,You can enter multiple curve path later.
 
 ### `getPointAtLength`: get point at the given length along the given path
 
 ```typescript
-getPointAtLength(pathArr: number[], length: number): {
+getPointAtLength(path: inputContent, length: number): {
 x: number;
 y: number;
 };
@@ -37,20 +49,27 @@ y: number;
 ### `getSubpathsAtLength`:get the subpath of a given path at the given range[0,1];
 
 ```typescript
-getSubpathsAtLength(pathArr: number[], ratio: number):
-[[mx:number,my:number],...[c1x:number,c1y:number,c2x:number,c2y:number,x2:number,y2:number]];
+getSubpathsAtLength(path: string|CurveObject[], ratio: number,justStart:boolean);
 ```
 
-### `bezierCurve`:get the curve path of a given bezierCurve path at the given range[0,1];
+\*justStart:true;
+returns {start:string like "M0 0 C0 0 100 0 100 0",end:""}
+
+\*justStart:false;
+returns string like "M0 0 C0 0 100 0 100 0"
+
+#martix
 
 ```typescript
-bezierCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, x4: number, y4: number, t?: number):
-[x1:number,y1:number,c1x:number,c1y:number,c2x:number,c2y:number,x2:number,y2:number];
+let mat = martix | new Martix(1, 0, 0, 1, 0, 0);
 ```
 
-### `quadraticCurve`:get the curve path of a given quadraticCurve path at the given range[0,1];
+## Methonds
 
-```typescript
-quadraticCurve(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, t?: number):
-[x1:number,y1:number,c1x:number,c1y:number,c2x:number,c2y:number,x2:number,y2:number];
-```
+### translate(x,y)
+
+### ratate(deg,x,y)
+
+### scale(x,y,cx,cy)
+
+### ...

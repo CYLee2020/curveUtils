@@ -174,7 +174,7 @@ module.exports = function (env) {
 
 
   if (env.production) {
-    config.entry = ['./src/index.ts']
+    config.entry = ['./src/path.ts', './src/matrix.ts']
     return config
 
   } else {

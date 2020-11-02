@@ -1,0 +1,46 @@
+declare function matrix(): Matrix;
+declare function matrix(a: Matrix): Matrix;
+declare function matrix(a: number, b: number, c: number, d: number, e: number, f: number): Matrix;
+export default matrix;
+declare type shorterType = {
+    dx: number;
+    dy: number;
+    scalex: number;
+    scaley: number;
+    rotate: number;
+    shear: number;
+    isSimple: boolean;
+    isSuperSimple: boolean;
+    noRotation: boolean;
+};
+export declare class Matrix {
+    a: number;
+    b: number;
+    c: number;
+    d: number;
+    e: number;
+    f: number;
+    constructor();
+    constructor(a: Matrix);
+    constructor(a: number, b: number, c: number, d: number, e: number, f: number);
+    add(a: number | Matrix, b: number, c: number, d: number, e: number, f: number): Matrix;
+    multLeft(a: number | Matrix, b: number, c: number, d: number, e: number, f: number): Matrix;
+    invert(): Matrix;
+    clone(): Matrix;
+    translate(x: number, y: number): this;
+    scale(x: number, y: number, cx: number, cy: number): this;
+    rotate(a: number, x?: number, y?: number): Matrix;
+    skewX(x: number): Matrix;
+    skewY(y: number): Matrix;
+    skew(x: number, y: number): Matrix;
+    x(x: number, y: number): number;
+    y(x: number, y: number): number;
+    get: (i: number) => number;
+    toString(): string;
+    offset(): string[];
+    norm(a: number[]): number;
+    normalize(a: number[]): void;
+    determinant(): number;
+    split(): shorterType;
+    toTransformString(shorter?: shorterType): string;
+}
