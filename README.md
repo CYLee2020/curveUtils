@@ -10,6 +10,8 @@ npm install curve-utils --save
 <script src="js/curveUtils.js"></script>
 ```
 
+# curve
+
 ## Features
 
 curve functions.you can get the little step of the given path,so you can draw the animated curve.
