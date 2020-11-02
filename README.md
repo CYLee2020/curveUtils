@@ -18,10 +18,12 @@ curve functions.you can get the little step of the given path,so you can draw th
 ### inputContent like inputString:"M0 0L100 0" or inputArray:[["M",0,0],["L",100,0]]
 
 ```typescript
-getTotalLength(path: inputContent): number;
+inputString: "M0 0L100 0";
+inputArray: [
+  ["M", 0, 0],
+  ["L", 100, 0]
+];
 ```
-
-# Curve
 
 ## Methonds
 
@@ -52,13 +54,13 @@ y: number;
 getSubpathsAtLength(path: string|CurveObject[], ratio: number,justStart:boolean);
 ```
 
-\*justStart:true;
-returns {start:string like "M0 0 C0 0 100 0 100 0",end:""}
+- justStart:true;
+  returns {start:string like "M0 0 C0 0 100 0 100 0",end:""}
 
-\*justStart:false;
-returns string like "M0 0 C0 0 100 0 100 0"
+- justStart:false;
+  returns string like "M0 0 C0 0 100 0 100 0"
 
-#martix
+# martix
 
 ```typescript
 let mat = martix | new Martix(1, 0, 0, 1, 0, 0);
