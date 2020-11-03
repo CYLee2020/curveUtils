@@ -56,10 +56,10 @@ y: number;
 getSubpathsAtLength(path: string|CurveObject[], ratio: number,justStart:boolean);
 ```
 
-- justStart:true;
+- justStart:false;
   returns {start:string like "M0 0 C0 0 100 0 100 0",end:""}
 
-- justStart:false;
+- justStart:true;
   returns string like "M0 0 C0 0 100 0 100 0"
 
 # martix
