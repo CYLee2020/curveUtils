@@ -1,7 +1,7 @@
 {
   "name": "curve-utils",
   "version": "0.0.2",
-  "main": "./dist/path.js",
+  "main": "./dist/index.js",
   "browser": "./dist/js/curveUtils.js",
   "license": "MIT",
   "dependencies": {},
