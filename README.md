@@ -65,7 +65,7 @@ getSubpathsAtLength(path: string|CurveObject[], ratio: number,justStart:boolean)
 # martix
 
 ```typescript
-let mat = martix | new Martix(1, 0, 0, 1, 0, 0);
+let mat = martix() | new Martix(1, 0, 0, 1, 0, 0);
 ```
 
 ## Methonds
